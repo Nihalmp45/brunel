@@ -41,6 +41,3 @@ Submit the form to register, and observe the success message.
 After 5 seconds, you will be redirected back to the homepage automatically.
 Contributing
 Contributions are welcome! Please open an issue or create a pull request for any new features, enhancements, or bug fixes.
-
-License
-This project is licensed under the MIT License.
