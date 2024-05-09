@@ -9,6 +9,7 @@ export const FormMain = () => {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [count, setCount] = useState(5);
+  const [isNameValid, setIsNameValid] = useState(true); // Track username validity
   const navigate = useNavigate(); // Get the navigate function
 
   // Function to handle input changes for name
@@ -47,6 +48,7 @@ export const FormMain = () => {
 
   return (
     <>
+      {/* form not submitted */}
       {!submitted ? (
         <div className="form-header">
           <div className="header-grp">
@@ -65,6 +67,7 @@ export const FormMain = () => {
           </div>
         </div>
       ) : (
+        // form submitted
         <div className="form-header">
           <div className="header-grp">
             <div className="left-content">
@@ -78,6 +81,7 @@ export const FormMain = () => {
         </div>
       )}
       <div>
+        {/* form not submitted */}
         {!submitted ? (
           <div>
             <label className="form-label-1">Registration Form</label>
@@ -91,6 +95,7 @@ export const FormMain = () => {
                   onChange={handleNameChange}
                   placeholder={name ? "" : "Enter your name"}
                 />
+                {/* Display error message if username is invalid */}
               </div>
               <div className="form-label-div-second">
                 <input
@@ -100,20 +105,21 @@ export const FormMain = () => {
                   placeholder={email ? "" : "Enter your email"}
                 />
                 {/* Display error message if email format is invalid */}
+               
               </div>
               {!isEmailValid && email ? (
-                <div className="error-message">
-                  <div>
-                    <span>
-                      <img src="images/red-dot.png" alt="" />
+                  <div className="error-message">
+                    <div>
+                      <span>
+                        <img src="images/red-dot.png" alt="" />
+                      </span>
+                    </div>
+                    <span className="error-label">
+                      Enter a valid email address
                     </span>
                   </div>
-                  <span className="error-label">
-                    Enter a valid email address
-                  </span>
-                </div>
-              ) : null}
-              {name && isEmailValid ? (
+                ) : null}
+              {isNameValid && isEmailValid ? (
                 <button
                   className="form-submit-btn-success"
                   onClick={handleSubmit}
@@ -128,6 +134,7 @@ export const FormMain = () => {
             </div>
           </div>
         ) : (
+          // form submitted
           <div>
             <div className="form-submitted-grp">
               <img

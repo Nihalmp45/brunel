@@ -1,3 +1,28 @@
 *{
   font-family: "Manrope", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 15px; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: #160d0d;
+}
+::-webkit-scrollbar-thumb {
+  /* background: #D0D6F9;
+  border-radius: 5px;  */
+  background: linear-gradient(45deg, #D0D6F9, #e52e71);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* For the scrollbar handle or thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* Color behind the scrollbar corner */
+}
